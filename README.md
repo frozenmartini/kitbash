@@ -20,6 +20,10 @@ set in the form.
 | Fan | Fanv2: power, speed, Auto/Manual, oscillation and direction, with optional named-speed switches and a temperature reading |
 | Ceiling fan | Fanv2 and a Lightbulb in one accessory |
 
+<p align="center">
+  <img src="images/ceiling-fan.jpg" width="300" alt="A Kitbash ceiling fan in the Home app: one accessory with a fan speed slider and a light brightness slider">
+</p>
+
 ## Requirements
 
 - Home Assistant 2026.9 or later.
@@ -60,14 +64,28 @@ with *Add Accessory → More options…* and its setup code. The old accessory s
 
 ## Troubleshooting
 
-Add this to `configuration.yaml` to write a detailed trace of HomeKit reads,
-writes and service calls, as a new file at each start, under
-`config/kitbash/logs/`:
+Kitbash can log everything that passes between the Home app and Home
+Assistant. Each line records one of these:
+
+- what the Home app read or changed, such as the fan turned on, the speed set
+  to 60% or the light turned off;
+- the Home Assistant service Kitbash called for it;
+- the entity state changes Kitbash passed back to HomeKit.
+
+Use it to see why an accessory does not do what you expect. To turn it on, add
+this to `configuration.yaml` and restart Home Assistant:
 
 ```yaml
 kitbash:
   dev_mode: true
 ```
+
+A new log file is started at each Home Assistant start, under
+`config/kitbash/logs/`. It changes nothing about how your accessories behave.
+
+**Turn it off when you are done:** remove the lines and restart Home Assistant.
+The log files are not rotated or size-limited, so they keep growing while it is
+on. You can delete them afterwards.
 
 ## License
 
