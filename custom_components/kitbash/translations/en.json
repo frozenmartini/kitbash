@@ -1,0 +1,344 @@
+{
+  "config": {
+    "step": {
+      "ceiling_fan": {
+        "title": "Ceiling fan for HomeKit",
+        "description": "A Fanv2 plus a Lightbulb in one accessory. Pick the fan or switch entity that turns it on and off. The next step offers every entity of the same device for the other parts.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "name": "Accessory name",
+          "power": "Power"
+        }
+      },
+      "ceiling_fan_parts": {
+        "title": "Ceiling fan: parts",
+        "description": "Power: {power} ({count} entities on its device). Each part gets a dropdown of every entity of that device, so any of them can serve any part; numbers and selects are offered for every part. Pick 'Other entity…' to choose an entity from elsewhere on the next step. Speed is mapped onto HomeKit's percentage slider automatically. Direction: a fan's forward, a select's first option and a switch's off are clockwise; tick Reverse if the direction shown in the Home app is the opposite of what the blades do. Oscillation accepts a fan, switch, input_boolean, number, input_number or select. For numbers, minimum = off and maximum = on. For selects, Off/Disabled = off (otherwise the first option), and the first remaining option = on; other options also report on. Mode is the fan (its presets) or a select whose options give HomeKit's Auto/Manual switch (you name the two options next), or a switch (on = Auto). A temperature sensor is published as a separate temperature reading in the same accessory. Tick 'Name the speeds' to publish one extra switch per speed level, named after the select's options or the number's values, since HomeKit's own speed slider is always a percentage. Exactly one is on at a time, and switching the on one off stops the fan. A speed source with more than 12 levels cannot be named. Leave a part blank to skip it; with a fan entity as power, blank speed, direction, oscillate and mode fall back to the fan's own features. A 'Last HomeKit write' sensor on the device shows the last value the Home app sent. After saving, a notification shows the setup code.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "speed": "Speed",
+          "named_speeds": "Name the speeds (adds a Low / Medium / High style switch per speed)",
+          "direction": "Direction",
+          "direction_reversed": "Reverse direction (swap clockwise and counter-clockwise)",
+          "oscillate": "Oscillate",
+          "mode": "Mode (source of Auto / Manual)",
+          "temperature": "Temperature sensor",
+          "light": "Light",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "ceiling_fan_other": {
+        "title": "Ceiling fan: other entities",
+        "description": "Pick the entity for each part you set to 'Other entity…'.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "speed": "Speed",
+          "direction": "Direction",
+          "oscillate": "Oscillate",
+          "mode": "Mode",
+          "temperature": "Temperature sensor",
+          "light": "Light",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "ceiling_fan_mode": {
+        "title": "Ceiling fan: Auto mode",
+        "description": "Mode entity: {mode}. It offers: {options}. Choose which one means Auto (a breeze, smart or auto mode) and which means Manual; HomeKit then shows its Auto/Manual switch. A fan entity may leave Manual empty (Manual then re-asserts the speed); a select needs both. Leave both empty for no switch.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "auto_preset": "Option that is Auto",
+          "manual_preset": "Option that is Manual",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "fan": {
+        "title": "Fan for HomeKit",
+        "description": "A bare Fanv2 accessory, no light. Pick the fan or switch entity that turns it on and off. The next step offers every entity of the same device for the other parts.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "name": "Accessory name",
+          "power": "Power"
+        }
+      },
+      "fan_parts": {
+        "title": "Fan: parts",
+        "description": "Power: {power} ({count} entities on its device). Each part gets a dropdown of every entity of that device, so any of them can serve any part; numbers and selects are offered for every part. Pick 'Other entity…' to choose an entity from elsewhere on the next step. Speed is mapped onto HomeKit's percentage slider automatically. Direction: a fan's forward, a select's first option and a switch's off are clockwise; tick Reverse if the direction shown in the Home app is the opposite of what the blades do. Oscillation accepts a fan, switch, input_boolean, number, input_number or select. For numbers, minimum = off and maximum = on. For selects, Off/Disabled = off (otherwise the first option), and the first remaining option = on; other options also report on. Mode is the fan (its presets) or a select whose options give HomeKit's Auto/Manual switch (you name the two options next), or a switch (on = Auto). A temperature sensor is published as a separate temperature reading in the same accessory. Tick 'Name the speeds' to publish one extra switch per speed level, named after the select's options or the number's values, since HomeKit's own speed slider is always a percentage. Exactly one is on at a time, and switching the on one off stops the fan. A speed source with more than 12 levels cannot be named. Leave a part blank to skip it; with a fan entity as power, blank speed, direction, oscillate and mode fall back to the fan's own features. A 'Last HomeKit write' sensor on the device shows the last value the Home app sent. After saving, a notification shows the setup code.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "speed": "Speed",
+          "named_speeds": "Name the speeds (adds a Low / Medium / High style switch per speed)",
+          "direction": "Direction",
+          "direction_reversed": "Reverse direction (swap clockwise and counter-clockwise)",
+          "oscillate": "Oscillate",
+          "mode": "Mode (source of Auto / Manual)",
+          "temperature": "Temperature sensor",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "fan_other": {
+        "title": "Fan: other entities",
+        "description": "Pick the entity for each part you set to 'Other entity…'.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "speed": "Speed",
+          "direction": "Direction",
+          "oscillate": "Oscillate",
+          "mode": "Mode",
+          "temperature": "Temperature sensor",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "fan_mode": {
+        "title": "Fan: Auto mode",
+        "description": "Mode entity: {mode}. It offers: {options}. Choose which one means Auto (a breeze, smart or auto mode) and which means Manual; HomeKit then shows its Auto/Manual switch. A fan entity may leave Manual empty (Manual then re-asserts the speed); a select needs both. Leave both empty for no switch.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "auto_preset": "Option that is Auto",
+          "manual_preset": "Option that is Manual",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "device": {
+        "title": "Choose a device",
+        "description": "Kitbash will suggest parts from this device. You can add or replace any part with another Home Assistant entity.",
+        "data": {
+          "device": "Device"
+        }
+      },
+      "assembly_kind": {
+        "title": "Choose an accessory type",
+        "description": "The suggested type comes from the available parts. You can choose any type.",
+        "data": {
+          "kind": "Accessory type"
+        }
+      },
+      "assembly_review": {
+        "title": "Review accessory parts",
+        "description": "{matches}\n\nStrong matches are suggested; ambiguous parts remain blank. Pickers are not limited to the chosen device, and accept number, input_number and select where a part allows them. Saved choices are kept when editing.\n\nEdit value mappings to choose exact Off/On values, direction values, slider bounds or ordered levels. An oscillation-angle control may have no Off value.",
+        "data": {
+          "name": "Accessory name",
+          "power": "Power",
+          "speed": "Speed",
+          "named_speeds": "Add a switch for each speed",
+          "direction": "Direction",
+          "direction_reversed": "Reverse direction mapping",
+          "oscillate": "Oscillate",
+          "mode": "Mode (source of Auto / Manual)",
+          "temperature": "Temperature reading",
+          "light": "Light",
+          "auto_preset": "Auto option or numeric value",
+          "manual_preset": "Manual option or numeric value",
+          "edit_values": "Edit value mappings before saving"
+        }
+      },
+      "value_mappings": {
+        "title": "Value mappings",
+        "description": "{count} controls can be configured. Choose one to edit, or select Done to return to the accessory review. Numbers and selects support custom values.",
+        "data": {
+          "control": "Control to configure",
+          "done": "Done — return to review"
+        }
+      },
+      "mapping_values": {
+        "title": "Configure control values",
+        "description": "{entity}\nControl: {role}\n\nFor a direction control, Off means clockwise and On means counter-clockwise, before the Reverse toggle. For a mode control, Off means Manual and On means Auto.\n\nFor sliders, list values/options one per line, from low to high. Speed levels are the running speeds; leave the Off option out. Blank fields use automatic values.\n\n{error}",
+        "data": {
+          "off": "Off / clockwise / Manual value",
+          "on": "On / counter-clockwise / Auto value",
+          "minimum": "Slider minimum (source units)",
+          "maximum": "Slider maximum (source units)",
+          "levels": "Ordered values or options (one per line)",
+          "unit": "Temperature unit override",
+          "automatic": "Reset this control to automatic mapping",
+          "back": "Go back without saving this control"
+        }
+      }
+    },
+    "error": {
+      "not_a_fan": "Power accepts fan, switch, input_boolean, number, input_number or select.",
+      "not_a_light": "The light accepts light, number, input_number or select.",
+      "unknown_preset": "That option is not one the mode entity offers.",
+      "same_preset": "Auto and Manual must be different options.",
+      "manual_needs_auto": "A Manual option needs an Auto option too.",
+      "no_free_port": "No free TCP port was found for the accessory.",
+      "bad_speed_source": "Speed accepts fan, number, input_number or select.",
+      "select_without_options": "That select lists no options yet; wait for it to load.",
+      "bad_direction_source": "Direction accepts fan, switch, input_boolean, number, input_number or select.",
+      "direction_options": "The direction select needs at least two options.",
+      "bad_oscillate_source": "Oscillate requires a fan, switch, input_boolean, number, input_number or select entity. Numbers need a finite range; selects need at least two options.",
+      "not_a_temperature": "Temperature accepts sensor, number, input_number or select.",
+      "select_needs_manual": "A select mode needs a Manual option as well as Auto.",
+      "bad_mode_source": "Mode accepts fan, switch, input_boolean, number, input_number or select.",
+      "mode_needs_source": "Auto/Manual options need a mode entity.",
+      "named_speeds_need_speed": "Naming the speeds needs a speed part; pick one first.",
+      "too_many_speeds": "That speed source has too many levels to name (12 at most).",
+      "invalid_mapping": "Those values cannot be mapped to the selected source. Check its available options and range."
+    },
+    "abort": {
+      "no_free_port": "No free TCP port was found for the accessory."
+    }
+  },
+  "options": {
+    "step": {
+      "ceiling_fan": {
+        "title": "Ceiling fan: power",
+        "description": "Change the power entity. A Fanv2 plus a Lightbulb in one accessory. Pick the fan or switch entity that turns it on and off. The next step offers every entity of the same device for the other parts.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "power": "Power"
+        }
+      },
+      "ceiling_fan_parts": {
+        "title": "Ceiling fan: parts",
+        "description": "Power: {power} ({count} entities on its device). Each part gets a dropdown of every entity of that device, so any of them can serve any part; numbers and selects are offered for every part. Pick 'Other entity…' to choose an entity from elsewhere on the next step. Speed is mapped onto HomeKit's percentage slider automatically. Direction: a fan's forward, a select's first option and a switch's off are clockwise; tick Reverse if the direction shown in the Home app is the opposite of what the blades do. Oscillation accepts a fan, switch, input_boolean, number, input_number or select. For numbers, minimum = off and maximum = on. For selects, Off/Disabled = off (otherwise the first option), and the first remaining option = on; other options also report on. Mode is the fan (its presets) or a select whose options give HomeKit's Auto/Manual switch (you name the two options next), or a switch (on = Auto). A temperature sensor is published as a separate temperature reading in the same accessory. Tick 'Name the speeds' to publish one extra switch per speed level, named after the select's options or the number's values, since HomeKit's own speed slider is always a percentage. Exactly one is on at a time, and switching the on one off stops the fan. A speed source with more than 12 levels cannot be named. Leave a part blank to skip it; with a fan entity as power, blank speed, direction, oscillate and mode fall back to the fan's own features. A 'Last HomeKit write' sensor on the device shows the last value the Home app sent.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "speed": "Speed",
+          "named_speeds": "Name the speeds (adds a Low / Medium / High style switch per speed)",
+          "direction": "Direction",
+          "direction_reversed": "Reverse direction (swap clockwise and counter-clockwise)",
+          "oscillate": "Oscillate",
+          "mode": "Mode (source of Auto / Manual)",
+          "temperature": "Temperature sensor",
+          "light": "Light",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "ceiling_fan_other": {
+        "title": "Ceiling fan: other entities",
+        "description": "Pick the entity for each part you set to 'Other entity…'.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "speed": "Speed",
+          "direction": "Direction",
+          "oscillate": "Oscillate",
+          "mode": "Mode",
+          "temperature": "Temperature sensor",
+          "light": "Light",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "ceiling_fan_mode": {
+        "title": "Ceiling fan: Auto mode",
+        "description": "Mode entity: {mode}. It offers: {options}. Choose which one means Auto (a breeze, smart or auto mode) and which means Manual; HomeKit then shows its Auto/Manual switch. A fan entity may leave Manual empty (Manual then re-asserts the speed); a select needs both. Leave both empty for no switch.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "auto_preset": "Option that is Auto",
+          "manual_preset": "Option that is Manual",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "fan": {
+        "title": "Fan: power",
+        "description": "Change the power entity. A bare Fanv2 accessory, no light. Pick the fan or switch entity that turns it on and off. The next step offers every entity of the same device for the other parts.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "power": "Power"
+        }
+      },
+      "fan_parts": {
+        "title": "Fan: parts",
+        "description": "Power: {power} ({count} entities on its device). Each part gets a dropdown of every entity of that device, so any of them can serve any part; numbers and selects are offered for every part. Pick 'Other entity…' to choose an entity from elsewhere on the next step. Speed is mapped onto HomeKit's percentage slider automatically. Direction: a fan's forward, a select's first option and a switch's off are clockwise; tick Reverse if the direction shown in the Home app is the opposite of what the blades do. Oscillation accepts a fan, switch, input_boolean, number, input_number or select. For numbers, minimum = off and maximum = on. For selects, Off/Disabled = off (otherwise the first option), and the first remaining option = on; other options also report on. Mode is the fan (its presets) or a select whose options give HomeKit's Auto/Manual switch (you name the two options next), or a switch (on = Auto). A temperature sensor is published as a separate temperature reading in the same accessory. Tick 'Name the speeds' to publish one extra switch per speed level, named after the select's options or the number's values, since HomeKit's own speed slider is always a percentage. Exactly one is on at a time, and switching the on one off stops the fan. A speed source with more than 12 levels cannot be named. Leave a part blank to skip it; with a fan entity as power, blank speed, direction, oscillate and mode fall back to the fan's own features. A 'Last HomeKit write' sensor on the device shows the last value the Home app sent.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "speed": "Speed",
+          "named_speeds": "Name the speeds (adds a Low / Medium / High style switch per speed)",
+          "direction": "Direction",
+          "direction_reversed": "Reverse direction (swap clockwise and counter-clockwise)",
+          "oscillate": "Oscillate",
+          "mode": "Mode (source of Auto / Manual)",
+          "temperature": "Temperature sensor",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "fan_other": {
+        "title": "Fan: other entities",
+        "description": "Pick the entity for each part you set to 'Other entity…'.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "speed": "Speed",
+          "direction": "Direction",
+          "oscillate": "Oscillate",
+          "mode": "Mode",
+          "temperature": "Temperature sensor",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "fan_mode": {
+        "title": "Fan: Auto mode",
+        "description": "Mode entity: {mode}. It offers: {options}. Choose which one means Auto (a breeze, smart or auto mode) and which means Manual; HomeKit then shows its Auto/Manual switch. A fan entity may leave Manual empty (Manual then re-asserts the speed); a select needs both. Leave both empty for no switch.\n\nFields also accept number, input_number and select entities. On/off uses a number's minimum and maximum, or a select's Off-style and On-style options (otherwise their order). Sliders use the numeric range or the option order.",
+        "data": {
+          "auto_preset": "Option that is Auto",
+          "manual_preset": "Option that is Manual",
+          "back": "Go back to the previous step instead (the rest of this form is ignored)"
+        }
+      },
+      "device": {
+        "title": "Choose a device",
+        "description": "Kitbash will suggest parts from this device. You can add or replace any part with another Home Assistant entity.",
+        "data": {
+          "device": "Device"
+        }
+      },
+      "assembly_kind": {
+        "title": "Choose an accessory type",
+        "description": "The suggested type comes from the available parts. You can choose any type.",
+        "data": {
+          "kind": "Accessory type"
+        }
+      },
+      "assembly_review": {
+        "title": "Review accessory parts",
+        "description": "{matches}\n\nStrong matches are suggested; ambiguous parts remain blank. Pickers are not limited to the chosen device, and accept number, input_number and select where a part allows them. Saved choices are kept when editing.\n\nEdit value mappings to choose exact Off/On values, direction values, slider bounds or ordered levels. An oscillation-angle control may have no Off value.",
+        "data": {
+          "name": "Accessory name",
+          "power": "Power",
+          "speed": "Speed",
+          "named_speeds": "Add a switch for each speed",
+          "direction": "Direction",
+          "direction_reversed": "Reverse direction mapping",
+          "oscillate": "Oscillate",
+          "mode": "Mode (source of Auto / Manual)",
+          "temperature": "Temperature reading",
+          "light": "Light",
+          "auto_preset": "Auto option or numeric value",
+          "manual_preset": "Manual option or numeric value",
+          "edit_values": "Edit value mappings before saving"
+        }
+      },
+      "value_mappings": {
+        "title": "Value mappings",
+        "description": "{count} controls can be configured. Choose one to edit, or select Done to return to the accessory review. Numbers and selects support custom values.",
+        "data": {
+          "control": "Control to configure",
+          "done": "Done — return to review"
+        }
+      },
+      "mapping_values": {
+        "title": "Configure control values",
+        "description": "{entity}\nControl: {role}\n\nFor a direction control, Off means clockwise and On means counter-clockwise, before the Reverse toggle. For a mode control, Off means Manual and On means Auto.\n\nFor sliders, list values/options one per line, from low to high. Speed levels are the running speeds; leave the Off option out. Blank fields use automatic values.\n\n{error}",
+        "data": {
+          "off": "Off / clockwise / Manual value",
+          "on": "On / counter-clockwise / Auto value",
+          "minimum": "Slider minimum (source units)",
+          "maximum": "Slider maximum (source units)",
+          "levels": "Ordered values or options (one per line)",
+          "unit": "Temperature unit override",
+          "automatic": "Reset this control to automatic mapping",
+          "back": "Go back without saving this control"
+        }
+      }
+    },
+    "error": {
+      "not_a_fan": "Power accepts fan, switch, input_boolean, number, input_number or select.",
+      "not_a_light": "The light accepts light, number, input_number or select.",
+      "unknown_preset": "That option is not one the mode entity offers.",
+      "same_preset": "Auto and Manual must be different options.",
+      "manual_needs_auto": "A Manual option needs an Auto option too.",
+      "bad_speed_source": "Speed accepts fan, number, input_number or select.",
+      "select_without_options": "That select lists no options yet; wait for it to load.",
+      "bad_direction_source": "Direction accepts fan, switch, input_boolean, number, input_number or select.",
+      "direction_options": "The direction select needs at least two options.",
+      "bad_oscillate_source": "Oscillate requires a fan, switch, input_boolean, number, input_number or select entity. Numbers need a finite range; selects need at least two options.",
+      "not_a_temperature": "Temperature accepts sensor, number, input_number or select.",
+      "select_needs_manual": "A select mode needs a Manual option as well as Auto.",
+      "bad_mode_source": "Mode accepts fan, switch, input_boolean, number, input_number or select.",
+      "mode_needs_source": "Auto/Manual options need a mode entity.",
+      "named_speeds_need_speed": "Naming the speeds needs a speed part; pick one first.",
+      "too_many_speeds": "That speed source has too many levels to name (12 at most).",
+      "invalid_mapping": "Those values cannot be mapped to the selected source. Check its available options and range."
+    }
+  },
+  "selector": {
+    "kind": {
+      "options": {
+        "ceiling_fan": "Ceiling fan",
+        "fan": "Fan only"
+      }
+    }
+  }
+}
